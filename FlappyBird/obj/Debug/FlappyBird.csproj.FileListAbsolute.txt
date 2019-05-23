@@ -11,3 +11,16 @@ C:\Users\Vrushab\C#\repos\FlappyBird\FlappyBird\obj\Debug\FlappyBird.pdb
 C:\Users\Vrushab\C#\repos\FlappyBird\FlappyBird\obj\Debug\FlappyBird.Form2.resources
 C:\Users\Vrushab\C#\repos\FlappyBird\FlappyBird\obj\Debug\FlappyBird.CustomControl1.resources
 C:\Users\Vrushab\C#\repos\FlappyBird\FlappyBird\obj\Debug\FlappyBird.Form3.resources
+C:\Users\320053825\Documents\C#\flappy-bird\FlappyBird\bin\Debug\FlappyBird.exe.config
+C:\Users\320053825\Documents\C#\flappy-bird\FlappyBird\bin\Debug\FlappyBird.exe
+C:\Users\320053825\Documents\C#\flappy-bird\FlappyBird\bin\Debug\FlappyBird.pdb
+C:\Users\320053825\Documents\C#\flappy-bird\FlappyBird\obj\Debug\FlappyBird.csprojAssemblyReference.cache
+C:\Users\320053825\Documents\C#\flappy-bird\FlappyBird\obj\Debug\FlappyBird.Properties.Resources.resources
+C:\Users\320053825\Documents\C#\flappy-bird\FlappyBird\obj\Debug\FlappyBird.csproj.GenerateResource.cache
+C:\Users\320053825\Documents\C#\flappy-bird\FlappyBird\obj\Debug\FlappyBird.csproj.CoreCompileInputs.cache
+C:\Users\320053825\Documents\C#\flappy-bird\FlappyBird\obj\Debug\FlappyBird.exe
+C:\Users\320053825\Documents\C#\flappy-bird\FlappyBird\obj\Debug\FlappyBird.pdb
+C:\Users\320053825\Documents\C#\flappy-bird\FlappyBird\obj\Debug\FlappyBird.Game.resources
+C:\Users\320053825\Documents\C#\flappy-bird\FlappyBird\obj\Debug\FlappyBird.Menu.resources
+C:\Users\320053825\Documents\C#\flappy-bird\FlappyBird\obj\Debug\FlappyBird.GameOver.resources
+C:\Users\320053825\Documents\C#\flappy-bird\FlappyBird\obj\Debug\FlappyBird.HighScore.resources

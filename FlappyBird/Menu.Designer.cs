@@ -1,6 +1,6 @@
 ﻿namespace FlappyBird
 {
-    partial class Form2
+    partial class Menu
     {
         /// <summary>
         /// Required designer variable.
@@ -94,7 +94,7 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // Form2
+            // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -108,8 +108,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
-            this.Name = "Form2";
-            this.Text = "Form2";
+            this.Name = "Menu";
+            this.Text = "Flappy Bird";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

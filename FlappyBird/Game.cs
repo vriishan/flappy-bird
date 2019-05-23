@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace FlappyBird
 {
-    public partial class Form1 : Form
+    public partial class Game : Form
     {
         bool jumping = false;
         int pipeSpeed = 5;
@@ -18,21 +18,14 @@ namespace FlappyBird
         int IScore = 0;
         int velocity = 0;
         int increaseSpeedCount = 0;
+        bool hasPassed = true;
 
-        public Form1()
+        public Game()
         {
             this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             //this.BackColor = Color.LimeGreen;
-            //this.TransparencyKey = Color.LimeGreen;            
-            InitializeComponent();            
-            label2.Text = "Game Over!";
-            label3.Text = "Your final score is: " + IScore;
-            label4.Text = "I made this game.";
-            
-            label1.Visible = false;
-            label2.Visible = false;
-            label3.Visible = false;
-            label4.Visible = false;            
+            //this.TransparencyKey = Color.LimeGreen;             
+            InitializeComponent();                     
         }
 
         //protected override void OnPaintBackground(PaintEventArgs e) { /* Do nothing */ }
@@ -61,7 +54,7 @@ namespace FlappyBird
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -74,15 +67,12 @@ namespace FlappyBird
             if (IScore - increaseSpeedCount >= 10)
             {
                 pipeSpeed += 1;
-                increaseSpeedCount = 5;
+                increaseSpeedCount += 5;
             }
             velocity += gravity;
             pipeBottom.Left -= pipeSpeed;
             pipeTop.Left -= pipeSpeed;
-            flappyBird.Top += velocity;
-            label1.Text = "" + IScore;
-
-            Random rand = new Random();
+            flappyBird.Top += velocity;           
 
             if (flappyBird.Bounds.IntersectsWith(ground.Bounds))
             {
@@ -95,26 +85,49 @@ namespace FlappyBird
             if (flappyBird.Bounds.IntersectsWith(pipeTop.Bounds))
             {
                 endGame();
+            }            
+
+            if (pipeBottom.Left < -80 || pipeTop.Left < -80)
+            {
+                //IScore += 1;
+                DrawString(IScore.ToString());
+                pipeBottom.Left = 1000;
+                pipeTop.Left = 1000;                
+                generatePipes();
+                hasPassed = true;
             }
 
-            if (pipeBottom.Left < -80 || pipeTop.Left < - 80)
+            if ((pipeBottom.Left < 100 || pipeTop.Left < 100) && (hasPassed==true))
             {
-                pipeBottom.Left = 1000;
-                pipeTop.Left = 1000;
                 IScore += 1;
                 DrawString(IScore.ToString());
-                pipeTop.SendToBack();
-                int top_verticalValue = rand.Next(-295, 0);
-                pipeTop.Location = new Point(pipeTop.Location.X, top_verticalValue);
-                int bottom_verticalValue = pipeTop.Height - Math.Abs(top_verticalValue) + 150;
-                pipeBottom.Location = new Point(pipeBottom.Location.X, bottom_verticalValue);
-            }           
+                hasPassed = false;
+            }
+        }
+
+        private void generatePipes()
+        {
+            Random rand = new Random();
+            int top_verticalValue = rand.Next(-295, 0);
+            pipeTop.Location = new Point(pipeTop.Location.X, top_verticalValue);
+            int bottom_verticalValue = pipeTop.Height - Math.Abs(top_verticalValue) + 150;
+            pipeBottom.Location = new Point(pipeBottom.Location.X, bottom_verticalValue);
+            //var pipe = new PictureBox
+            //{
+            //    Name = "newPipe",
+            //    Size = new Size(99, 369),
+            //    Location = new Point(200, top_verticalValue),
+            //    Image = Image.FromFile("C:\\Users\\320053825\\Documents\\C#\\flappy-bird\\FlappyBird\\assets\\images\\pipe.png"),
+            //};
+            //this.Controls.Add(pipe);
         }
 
         private void GameKeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Space)
             {
+                gameTimer.Enabled = true;
+                getReady.Visible = false;
                 jumping = true;
                 velocity = -10;
             }
@@ -135,7 +148,7 @@ namespace FlappyBird
             gameTimer.Stop();
             //label2.Visible = true;
             this.Hide();
-            var gameOverForm = new Form3(IScore);
+            var gameOverForm = new GameOver(IScore);
             gameOverForm.Closed += (s, args) => this.Close();
             gameOverForm.Show();
             //label3.Text = "Your final score is: " + IScore;

@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace FlappyBird
 {
-    public partial class Form2 : Form
+    public partial class Menu : Form
     {
-        public Form2()
+        public Menu()
         {
             InitializeComponent();
         }
@@ -20,7 +21,7 @@ namespace FlappyBird
         private void label2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var game = new Form1();
+            var game = new Game();
             game.Closed += (s, args) => this.Close();
             game.Show();
         }
@@ -32,7 +33,10 @@ namespace FlappyBird
 
         private void label4_Click(object sender, EventArgs e)
         {
-
+            //this.Hide();
+            var highScore = new HighScore();
+            //game.Closed += (s, args) => this.Close();
+            highScore.Show();
         }
     }
 }
