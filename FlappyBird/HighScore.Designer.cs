@@ -56,75 +56,75 @@
             this.panel1.Location = new System.Drawing.Point(15, 98);
             this.panel1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(249, 4);
+            this.panel1.Size = new System.Drawing.Size(249, 3);
             this.panel1.TabIndex = 1;
             // 
             // player1Name
             // 
-            this.player1Name.AutoSize = true;
             this.player1Name.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.player1Name.Location = new System.Drawing.Point(15, 142);
+            this.player1Name.Location = new System.Drawing.Point(12, 142);
             this.player1Name.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.player1Name.Name = "player1Name";
             this.player1Name.Size = new System.Drawing.Size(62, 17);
             this.player1Name.TabIndex = 2;
             this.player1Name.Text = "label2";
+            this.player1Name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.player1Name.Click += new System.EventHandler(this.player1Name_Click);
             // 
             // player3Score
             // 
-            this.player3Score.AutoSize = true;
             this.player3Score.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.player3Score.Location = new System.Drawing.Point(231, 236);
+            this.player3Score.Location = new System.Drawing.Point(202, 236);
             this.player3Score.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.player3Score.Name = "player3Score";
             this.player3Score.Size = new System.Drawing.Size(62, 17);
             this.player3Score.TabIndex = 4;
             this.player3Score.Text = "label4";
+            this.player3Score.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // player3Name
             // 
-            this.player3Name.AutoSize = true;
             this.player3Name.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.player3Name.Location = new System.Drawing.Point(15, 236);
+            this.player3Name.Location = new System.Drawing.Point(12, 236);
             this.player3Name.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.player3Name.Name = "player3Name";
             this.player3Name.Size = new System.Drawing.Size(62, 17);
             this.player3Name.TabIndex = 5;
             this.player3Name.Text = "label5";
+            this.player3Name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // player2Name
             // 
-            this.player2Name.AutoSize = true;
             this.player2Name.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.player2Name.Location = new System.Drawing.Point(15, 189);
+            this.player2Name.Location = new System.Drawing.Point(12, 189);
             this.player2Name.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.player2Name.Name = "player2Name";
             this.player2Name.Size = new System.Drawing.Size(62, 17);
             this.player2Name.TabIndex = 6;
             this.player2Name.Text = "label6";
+            this.player2Name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // player1Score
             // 
-            this.player1Score.AutoSize = true;
             this.player1Score.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.player1Score.Location = new System.Drawing.Point(231, 142);
+            this.player1Score.Location = new System.Drawing.Point(202, 142);
             this.player1Score.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.player1Score.Name = "player1Score";
             this.player1Score.Size = new System.Drawing.Size(62, 17);
             this.player1Score.TabIndex = 7;
             this.player1Score.Text = "label7";
+            this.player1Score.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // player2Score
             // 
-            this.player2Score.AutoSize = true;
             this.player2Score.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.player2Score.Location = new System.Drawing.Point(231, 189);
+            this.player2Score.Location = new System.Drawing.Point(202, 189);
             this.player2Score.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.player2Score.Name = "player2Score";
             this.player2Score.Size = new System.Drawing.Size(62, 17);
             this.player2Score.TabIndex = 8;
             this.player2Score.Text = "label8";
+            this.player2Score.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // closeButton
             // 

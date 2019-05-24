@@ -73,6 +73,7 @@ namespace FlappyBird
             {
                 playername = "unknown";
             }
+            playername = playername.Trim();
             string connectionString;
             SqlConnection cnn;
             connectionString = @"Server=localhost;Database=master;Trusted_Connection=True;";

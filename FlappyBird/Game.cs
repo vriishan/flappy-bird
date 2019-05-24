@@ -97,7 +97,7 @@ namespace FlappyBird
                 hasPassed = true;
             }
 
-            if ((pipeBottom.Left < 100 || pipeTop.Left < 100) && (hasPassed==true))
+            if ((pipeBottom.Left < 150 || pipeTop.Left < 150) && (hasPassed==true))
             {
                 IScore += 1;
                 DrawString(IScore.ToString());
@@ -111,15 +111,7 @@ namespace FlappyBird
             int top_verticalValue = rand.Next(-295, 0);
             pipeTop.Location = new Point(pipeTop.Location.X, top_verticalValue);
             int bottom_verticalValue = pipeTop.Height - Math.Abs(top_verticalValue) + 150;
-            pipeBottom.Location = new Point(pipeBottom.Location.X, bottom_verticalValue);
-            //var pipe = new PictureBox
-            //{
-            //    Name = "newPipe",
-            //    Size = new Size(99, 369),
-            //    Location = new Point(200, top_verticalValue),
-            //    Image = Image.FromFile("C:\\Users\\320053825\\Documents\\C#\\flappy-bird\\FlappyBird\\assets\\images\\pipe.png"),
-            //};
-            //this.Controls.Add(pipe);
+            pipeBottom.Location = new Point(pipeBottom.Location.X, bottom_verticalValue);            
         }
 
         private void GameKeyDown(object sender, KeyEventArgs e)
