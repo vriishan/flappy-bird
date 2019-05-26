@@ -13,19 +13,21 @@ namespace FlappyBird
     public partial class Game : Form
     {
         bool jumping = false;
-        int pipeSpeed = 5;
+        int pipeSpeed = 3;
         int gravity = 1;
         int IScore = 0;
         int velocity = 0;
         int increaseSpeedCount = 0;
-        bool hasPassed = true;
+        bool hasPassedFirst = false;
+        bool hasPassedSecond = false;
+        bool firstTime = true;
 
         public Game()
         {
             this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             //this.BackColor = Color.LimeGreen;
             //this.TransparencyKey = Color.LimeGreen;             
-            InitializeComponent();                     
+            InitializeComponent();            
         }
 
         //protected override void OnPaintBackground(PaintEventArgs e) { /* Do nothing */ }
@@ -41,10 +43,10 @@ namespace FlappyBird
         {
             System.Drawing.Graphics formGraphics = this.CreateGraphics();
             //string drawString = "Sample Text";
-            System.Drawing.Font drawFont = new System.Drawing.Font("Arial", 16);
-            System.Drawing.SolidBrush drawBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Black);
+            System.Drawing.Font drawFont = new System.Drawing.Font("04b_19", 26, FontStyle.Bold);
+            System.Drawing.SolidBrush drawBrush = new System.Drawing.SolidBrush(System.Drawing.Color.White);            
             float x = 150.0F;
-            float y = 35.0F;
+            float y = 40.0F;
             System.Drawing.StringFormat drawFormat = new System.Drawing.StringFormat();
             formGraphics.DrawString(score, drawFont, drawBrush, x, y, drawFormat);
             drawFont.Dispose();
@@ -54,7 +56,12 @@ namespace FlappyBird
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            pipeBottom_2.SendToBack();
+            pipeTop_2.SendToBack();
+            pipeTop.SendToBack();
+            pipeBottom.SendToBack();            
+            //using (Graphics g = Graphics.FromImage("C:\\Users\\Vrushab\\C#\\repos\\FB\\flappy-bird\\FlappyBird\\assets\\images\\bird.png")) ;
+            //GameController 
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -64,6 +71,7 @@ namespace FlappyBird
 
         private void gameTimer_Tick(object sender, EventArgs e)
         {
+            DrawString(IScore.ToString());
             if (IScore - increaseSpeedCount >= 10)
             {
                 pipeSpeed += 1;
@@ -72,47 +80,81 @@ namespace FlappyBird
             velocity += gravity;
             pipeBottom.Left -= pipeSpeed;
             pipeTop.Left -= pipeSpeed;
+            pipeTop_2.Left -= pipeSpeed;
+            pipeBottom_2.Left -= pipeSpeed;
             flappyBird.Top += velocity;           
 
             if (flappyBird.Bounds.IntersectsWith(ground.Bounds))
             {
                 endGame();
             }
-            if (flappyBird.Bounds.IntersectsWith(pipeBottom.Bounds))
+            if (flappyBird.Bounds.IntersectsWith(pipeBottom.Bounds) || flappyBird.Bounds.IntersectsWith(pipeBottom_2.Bounds))
             {
                 endGame();
             }
-            if (flappyBird.Bounds.IntersectsWith(pipeTop.Bounds))
+            if (flappyBird.Bounds.IntersectsWith(pipeTop.Bounds) || flappyBird.Bounds.IntersectsWith(pipeTop_2.Bounds))
             {
                 endGame();
             }            
 
             if (pipeBottom.Left < -80 || pipeTop.Left < -80)
+            {                
+                pipeBottom.Left = 500;
+                pipeTop.Left = 500;                
+                generatePipesFirst();                            
+                hasPassedFirst = true;
+            }            
+
+            if ((pipeTop_2.Left < -400 || pipeBottom_2.Left < -400) && firstTime == true)
             {
-                //IScore += 1;
-                DrawString(IScore.ToString());
-                pipeBottom.Left = 1000;
-                pipeTop.Left = 1000;                
-                generatePipes();
-                hasPassed = true;
+                pipeBottom_2.Left = 500;
+                pipeTop_2.Left = 500;
+                generatePipesSecond();
+                firstTime = false;
+                hasPassedSecond = true;
             }
 
-            if ((pipeBottom.Left < 150 || pipeTop.Left < 150) && (hasPassed==true))
+            if ((pipeTop_2.Left < -80 || pipeBottom_2.Left < -80) && firstTime == false)
+            {
+                pipeBottom_2.Left = 500;
+                pipeTop_2.Left = 500;
+                generatePipesSecond();
+                firstTime = false;
+                hasPassedSecond = true;
+            }
+
+
+            if ((pipeBottom.Left < 100 || pipeTop.Left < 100) && (hasPassedFirst==true))
+            {
+                IScore += 1;                                
+                hasPassedFirst = false;
+            }
+
+            if ((pipeBottom_2.Left < 100 || pipeTop_2.Left < 100) && (hasPassedSecond==true))                
             {
                 IScore += 1;
-                DrawString(IScore.ToString());
-                hasPassed = false;
-            }
+                hasPassedSecond = false;
+            }          
         }
 
-        private void generatePipes()
+        private void generatePipesFirst()
         {
             Random rand = new Random();
-            int top_verticalValue = rand.Next(-295, 0);
+            int top_verticalValue = rand.Next(-300, -5);
             pipeTop.Location = new Point(pipeTop.Location.X, top_verticalValue);
             int bottom_verticalValue = pipeTop.Height - Math.Abs(top_verticalValue) + 150;
             pipeBottom.Location = new Point(pipeBottom.Location.X, bottom_verticalValue);            
         }
+
+        private void generatePipesSecond()
+        {
+            Random rand = new Random();
+            int top_verticalValue = rand.Next(-295, 15);
+            pipeTop_2.Location = new Point(pipeTop_2.Location.X, top_verticalValue);
+            int bottom_verticalValue = pipeTop_2.Height - Math.Abs(top_verticalValue) + 150;
+            pipeBottom_2.Location = new Point(pipeBottom_2.Location.X, bottom_verticalValue);
+        }
+    
 
         private void GameKeyDown(object sender, KeyEventArgs e)
         {
@@ -132,7 +174,6 @@ namespace FlappyBird
                 jumping = true;
                 //velocity = 5;
             }
-
         }
 
         private void endGame()
@@ -146,6 +187,6 @@ namespace FlappyBird
             //label3.Text = "Your final score is: " + IScore;
             //label3.Visible = true;
             //label4.Visible = true;
-        } 
+        }       
     }
 }

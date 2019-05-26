@@ -38,11 +38,15 @@
             this.pipeTop = new System.Windows.Forms.PictureBox();
             this.flappyBird = new System.Windows.Forms.PictureBox();
             this.getReady = new System.Windows.Forms.PictureBox();
+            this.pipeBottom_2 = new System.Windows.Forms.PictureBox();
+            this.pipeTop_2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeBottom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeTop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.flappyBird)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getReady)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pipeBottom_2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pipeTop_2)).BeginInit();
             this.SuspendLayout();
             // 
             // gameTimer
@@ -53,9 +57,9 @@
             // ground
             // 
             this.ground.Image = global::FlappyBird.Properties.Resources.ground;
-            this.ground.Location = new System.Drawing.Point(-4, 554);
+            this.ground.Location = new System.Drawing.Point(-4, 556);
             this.ground.Name = "ground";
-            this.ground.Size = new System.Drawing.Size(342, 50);
+            this.ground.Size = new System.Drawing.Size(342, 48);
             this.ground.TabIndex = 3;
             this.ground.TabStop = false;
             // 
@@ -103,6 +107,26 @@
             this.getReady.TabIndex = 10;
             this.getReady.TabStop = false;
             // 
+            // pipeBottom_2
+            // 
+            this.pipeBottom_2.BackColor = System.Drawing.Color.Transparent;
+            this.pipeBottom_2.Image = global::FlappyBird.Properties.Resources.pipe;
+            this.pipeBottom_2.Location = new System.Drawing.Point(-100, 364);
+            this.pipeBottom_2.Name = "pipeBottom_2";
+            this.pipeBottom_2.Size = new System.Drawing.Size(99, 424);
+            this.pipeBottom_2.TabIndex = 11;
+            this.pipeBottom_2.TabStop = false;
+            // 
+            // pipeTop_2
+            // 
+            this.pipeTop_2.BackColor = System.Drawing.Color.Transparent;
+            this.pipeTop_2.Image = global::FlappyBird.Properties.Resources.pipedown;
+            this.pipeTop_2.Location = new System.Drawing.Point(-100, -165);
+            this.pipeTop_2.Name = "pipeTop_2";
+            this.pipeTop_2.Size = new System.Drawing.Size(99, 369);
+            this.pipeTop_2.TabIndex = 12;
+            this.pipeTop_2.TabStop = false;
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -110,7 +134,9 @@
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.BackgroundImage = global::FlappyBird.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(333, 600);
+            this.ClientSize = new System.Drawing.Size(333, 598);
+            this.Controls.Add(this.pipeTop_2);
+            this.Controls.Add(this.pipeBottom_2);
             this.Controls.Add(this.getReady);
             this.Controls.Add(this.ground);
             this.Controls.Add(this.pipeBottom);
@@ -127,6 +153,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pipeTop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.flappyBird)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getReady)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pipeBottom_2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pipeTop_2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -139,6 +167,8 @@
         private System.Windows.Forms.Timer gameTimer;
         private System.Windows.Forms.PictureBox pipeBottom;
         private System.Windows.Forms.PictureBox getReady;
+        private System.Windows.Forms.PictureBox pipeBottom_2;
+        private System.Windows.Forms.PictureBox pipeTop_2;
     }
 }
 

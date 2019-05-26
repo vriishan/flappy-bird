@@ -65,7 +65,7 @@
             this.player1Name.Location = new System.Drawing.Point(12, 142);
             this.player1Name.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.player1Name.Name = "player1Name";
-            this.player1Name.Size = new System.Drawing.Size(62, 17);
+            this.player1Name.Size = new System.Drawing.Size(83, 17);
             this.player1Name.TabIndex = 2;
             this.player1Name.Text = "label2";
             this.player1Name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -88,7 +88,7 @@
             this.player3Name.Location = new System.Drawing.Point(12, 236);
             this.player3Name.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.player3Name.Name = "player3Name";
-            this.player3Name.Size = new System.Drawing.Size(62, 17);
+            this.player3Name.Size = new System.Drawing.Size(83, 17);
             this.player3Name.TabIndex = 5;
             this.player3Name.Text = "label5";
             this.player3Name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -99,7 +99,7 @@
             this.player2Name.Location = new System.Drawing.Point(12, 189);
             this.player2Name.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.player2Name.Name = "player2Name";
-            this.player2Name.Size = new System.Drawing.Size(62, 17);
+            this.player2Name.Size = new System.Drawing.Size(83, 17);
             this.player2Name.TabIndex = 6;
             this.player2Name.Text = "label6";
             this.player2Name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

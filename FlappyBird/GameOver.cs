@@ -69,6 +69,7 @@ namespace FlappyBird
         private void registerPlayer()
         {
             string playername = textBox1.Text;
+            playername = playername.Replace(" ", "");
             if (playername.Equals(""))
             {
                 playername = "unknown";
