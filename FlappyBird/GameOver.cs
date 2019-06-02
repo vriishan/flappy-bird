@@ -84,12 +84,12 @@ namespace FlappyBird
             using (SqlCommand command = new SqlCommand(sql, cnn))
             {
                 command.ExecuteNonQuery();
-                MessageBox.Show("Database selected!");
+                //MessageBox.Show("Database selected!");
                 string insert_query_command = "INSERT INTO player_data VALUES ('" + playername + "'," + playerScore + ")";
                 using (SqlCommand insert_command = new SqlCommand(insert_query_command, cnn))
                 {
                     insert_command.ExecuteNonQuery();
-                    MessageBox.Show("Player registered!");
+                    //MessageBox.Show("Player registered!");
                 }
             }
         }

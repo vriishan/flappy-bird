@@ -34,11 +34,10 @@ namespace FlappyBird
             using (SqlCommand command = new SqlCommand(sql, cnn))
             {
                 command.ExecuteNonQuery();
-                MessageBox.Show("Database selected!");
+                //MessageBox.Show("Database selected!");
             }
             sql = "select name, score from player_data order by score desc offset 0 rows fetch next 3 rows only";
             SqlDataReader dataReader;
-            string Output = "";
             using (SqlCommand command = new SqlCommand(sql, cnn))
             {
                 dataReader = command.ExecuteReader();
@@ -58,8 +57,7 @@ namespace FlappyBird
                     playerNameList[i].Text = dataReader.GetValue(0).ToString();
                     playerScoreList[i].Text = dataReader.GetValue(1).ToString();
                     i++;
-                }
-                //MessageBox.Show(Output);
+                }                
             }
             cnn.Close();
         }
